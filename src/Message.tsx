@@ -1,6 +1,9 @@
 // PascalCasing - used in react for functions, like camel casing
 function Message() {
     // JSX: JavaScript XML (Syntax, babeljs.io for translater)
+    const name = '';
+    if (name)
+        return <h1>Hello {name}!</h1>;
     return <h1>Hello World!</h1>;
 }
 
