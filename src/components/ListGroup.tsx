@@ -1,6 +1,11 @@
+import { MouseEvent } from "react";
+
 function ListGroup() {
   let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
-  items = [];
+  let selectedIndex = 0;
+
+  // EventHandler
+  const handleClick = (event: MouseEvent) => console.log(event);
 
   // React only allows one component in parentheses
   return (
@@ -12,8 +17,18 @@ function ListGroup() {
       {items.length == 0 && <p>No items found</p>}
       <ul className="list-group">
         {/*everything needs a key property (id)*/}
-        {items.map((item) => (
-          <li key={item}>{item}</li>
+        {items.map((item, index) => (
+          <li
+            className={
+              selectedIndex === index
+                ? "list-group-item active"
+                : "list-group-item"
+            }
+            key={item}
+            onClick={handleClick}
+          >
+            {item}
+          </li>
         ))}
       </ul>
     </>
