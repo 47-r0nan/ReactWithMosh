@@ -1,11 +1,10 @@
-import { MouseEvent } from "react";
+import { useState } from "react";
 
 function ListGroup() {
   let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
-  let selectedIndex = 0;
 
-  // EventHandler
-  const handleClick = (event: MouseEvent) => console.log(event);
+  // State Hook (used to say this variable will change)
+  const [selectedIndex, setSelectedIndex] = useState(-1);
 
   // React only allows one component in parentheses
   return (
@@ -25,7 +24,9 @@ function ListGroup() {
                 : "list-group-item"
             }
             key={item}
-            onClick={handleClick}
+            onClick={() => {
+              setSelectedIndex(index);
+            }}
           >
             {item}
           </li>
