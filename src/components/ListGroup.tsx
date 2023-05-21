@@ -1,8 +1,11 @@
 import { useState } from "react";
 
-function ListGroup() {
-  let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
+interface ListGroupProps {
+  items: string[];
+  heading: string;
+}
 
+function ListGroup({ items, heading }: ListGroupProps) {
   // State Hook (used to say this variable will change)
   const [selectedIndex, setSelectedIndex] = useState(-1);
 
@@ -10,7 +13,7 @@ function ListGroup() {
   return (
     <>
       {/*This is a comment in a fragment*/}
-      <h1>List:</h1>
+      <h1>{heading}</h1>
       {/*items.length === 0 ? <p>No items found</p> : null
       ^^This is the same as below*/}
       {items.length == 0 && <p>No items found</p>}
