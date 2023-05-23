@@ -1,9 +1,9 @@
-import ListGroup from "./components/ListGroup";
+import { BsFillCalendarFill } from "react-icons/bs";
 
 function App() {
   return (
     <div>
-      <ListGroup />
+      <BsFillCalendarFill color="red" size="40" />
     </div>
   );
 }
